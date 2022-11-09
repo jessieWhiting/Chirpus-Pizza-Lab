@@ -1,0 +1,45 @@
+<h1>Chirpus Pizza: </h1>
+
+<!--Button for Category Selection-->
+<p style = "font-size: x-large;">Filter By  Catergory:</p>
+<input type = "text" id ="category"/>
+<div>
+<button (click) = "getByCategory()" style = "font-size: larger;">Filter ZA</button>
+</div>
+
+<!--Initiate Table here-->
+<div *ngFor="let m of items; index as i" style="border: 3px solid gray; background-color:lightskyblue;
+ padding: 25px; width: 50%; margin-right:auto; margin-left:auto;">
+  <table>
+    <tr style = "text-align: center;">
+      <th style = "color: darksalmon; font-size: x-large;">
+        Item:
+      </th>
+      <th>|||</th>
+      <th style = "color: darksalmon; font-size: x-large;">
+        Category:
+      </th>
+      <th>|||</th>
+      <th style = "color: darksalmon; font-size: x-large;">
+        Price: 
+      </th>
+    </tr>
+
+    <!--Print Menu Items-->
+      <tr style = "text-align: center;">
+        <td style ="font-size: large;"> 
+          {{m.item}}
+        </td>
+        <th>|||</th>
+        <td style ="font-size: large;">
+          {{m.category}}
+        </td>
+        <th>|||</th>
+        <td style ="font-size: large;">
+          ${{m.price}}
+        </td>
+      </tr>
+  </table>
+</div>
+
+<button (click)="Reset()" style = "font-size: larger;">Remove Filter</button>
